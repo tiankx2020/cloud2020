@@ -61,7 +61,7 @@
         </dependency>
         <dependency>
             <groupId>com.atguigu.springcloud</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>cloud-api-commons</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

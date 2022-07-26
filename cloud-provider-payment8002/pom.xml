@@ -19,12 +19,12 @@
         </dependency>
 
         <!-- 引入自己定义的api通用包 -->
-        <!--<dependency>-->
-        <!--    <groupId>com.atguigu.springcloud</groupId>-->
-        <!--    <artifactId>cloud-api-commons</artifactId>-->
-        <!--    <version>${project.version}</version>-->
-        <!--    <scope>compile</scope>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.atguigu.springcloud</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
         <dependency>
