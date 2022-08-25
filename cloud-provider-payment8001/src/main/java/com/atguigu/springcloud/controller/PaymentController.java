@@ -31,10 +31,17 @@ public class PaymentController {
     }
 
 
-    @GetMapping("/getPaymentById/{id}")
+    @GetMapping("/get/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Long id){
         Payment payment = paymentService.getPaymentById(id);
         return payment!=null?new CommonResult(200,"操作成功 port:"+serverPort,payment):new CommonResult(444,"插入数据库失败","result");
     }
+
+    @GetMapping("/lb")
+    public CommonResult get(){
+        return new CommonResult(200,serverPort);
+    }
+
+
 
 }

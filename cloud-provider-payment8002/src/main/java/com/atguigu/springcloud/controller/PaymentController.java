@@ -37,4 +37,9 @@ public class PaymentController {
         return payment!=null?new CommonResult(200,"操作成功 serverPort:"+serverPort,payment):new CommonResult(444,"插入数据库失败","result");
     }
 
+    @GetMapping("/lb")
+    public CommonResult get(){
+        return new CommonResult(200,serverPort);
+    }
+
 }

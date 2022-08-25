@@ -1,3 +1,9 @@
-# Project exclude paths
-/cloud-api-commons/target/
-/common/target/
+/.idea
+target/
+installer
+git
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
