@@ -15,24 +15,25 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class PaymentService {
 
-    public String paymentInfo_ok(Integer id){
+    public String paymentInfoOk(Integer id){
         return "线程池："+Thread.currentThread().getName()+"paymentInfo_ok  id:"+id;
     }
 
-    @HystrixCommand(fallbackMethod = "paymentInfoTimeOutHandler", commandProperties = {
+    @HystrixCommand(fallbackMethod = "paymentInfoExceptionHandler", commandProperties = {
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000")
     })
-    public String paymentInfo_timeout(Integer id){
-        try {
-            TimeUnit.SECONDS.sleep(3);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+    public String paymentInfoException(Integer id){
+        // try {
+        //     TimeUnit.SECONDS.sleep(10);
+        // }catch (Exception e){
+        //     e.printStackTrace();
+        // }
+        int i = 10/0;
         return "线程池："+Thread.currentThread().getName()+"paymentInfo_timeout id:"+id;
     }
 
 
-    public String paymentInfoTimeOutHandler(Integer id){
+    public String paymentInfoExceptionHandler(Integer id){
         return  "线程池:  " + Thread.currentThread().getName() + "  paymentInfoTimeOutHandler8001系统繁忙或者运行报错，请稍后再试,id:  " + id + "\t"
                 + "o(╥﹏╥)o";
     }

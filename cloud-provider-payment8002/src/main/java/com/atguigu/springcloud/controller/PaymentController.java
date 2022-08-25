@@ -31,7 +31,7 @@ public class PaymentController {
     }
 
 
-    @GetMapping("/getPaymentById/{id}")
+    @GetMapping("/get/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Long id){
         Payment payment = paymentService.getPaymentById(id);
         return payment!=null?new CommonResult(200,"操作成功 serverPort:"+serverPort,payment):new CommonResult(444,"插入数据库失败","result");

@@ -4,6 +4,8 @@ import com.atguigu.spring.cloud.service.PaymentFeignService;
 import com.atguigu.springcloud.entitys.CommonResult;
 import com.atguigu.springcloud.entitys.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,4 +29,13 @@ public class OrderFeignController {
     public CommonResult<Payment> getPaymentById(@PathVariable("id") long  id){
         return service.getPaymentById(id);
     }
+
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeout() {
+        // OpenFeign客户端一般默认等待1秒钟
+        return service.paymentFeignTimeout();
+    }
+
+
+
 }

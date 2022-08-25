@@ -26,16 +26,15 @@ public class PaymentController {
     private String serverPort;
 
     @GetMapping(value = "/payment/hystrix/ok/{id}")
-    public String payment_ok(@PathVariable("id") Integer id){
-        String result = service.paymentInfo_ok(id);
+    public String paymentOk(@PathVariable("id") Integer id){
+        String result = service.paymentInfoOk(id);
         log.info("result:"+result);
-        System.out.println(result);
         return  result;
     }
 
     @GetMapping(value = "/payment/hystrix/timeout/{id}")
-    public String payment_timeout(@PathVariable("id") Integer id){
-        String result = service.paymentInfo_timeout(id);
+    public String paymentTimeout(@PathVariable("id") Integer id){
+        String result = service.paymentInfoException(id);
         log.info("result:"+result);
         System.out.println(result);
         return  result;

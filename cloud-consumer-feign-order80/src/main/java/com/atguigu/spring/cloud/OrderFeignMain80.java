@@ -10,6 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @date: 2022年08月15日 16:40
  */
 @SpringBootApplication
+// 此时使用FeignClient客户端
 @EnableFeignClients
 public class OrderFeignMain80 {
     public static void main(String[] args) {
